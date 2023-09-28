@@ -1,11 +1,11 @@
 class Efectivo extends Pago {
-    public Efectivo(float monto, OrdenCompra Boleta){
-        super(monto,Boleta);
+    public Efectivo(float monto){
+        super(monto);
     }
 
-    public float calDevolucion(){
-        if(Boleta.calcPrecio()<GetMonto()){
-            return Boleta.calcPrecio()-GetMonto();
+    public float calDevolucion(OrdenBoleta ordenboleta){
+        if(ordenboleta.calcPrecio()<GetMonto()){
+            return ordenboleta.calcPrecio()-GetMonto();
         }
         else{
             return 0;
