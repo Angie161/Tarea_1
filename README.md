@@ -26,8 +26,8 @@ Si, ChatGPT tuvo algo que ver 🤫.
 <details>
 <summary> <b> GitHub Stats</b></summary> 
 <p align="center">
-  <img align="center" width="450" height="165" src="https://github-readme-stats.vercel.app/api?username=angie161&show_icons=true&hide_border=true&line_height=20&bg_color=0,fd6e82,fc977f&theme=graywhite"/>
-  <img align="center" width="450" height="165" src="https://github-readme-stats.vercel.app/api?username=rhussu&show_icons=true&hide_border=true&line_height=20&bg_color=0,fc977f,ffdd3f&theme=graywhite"/>
+  <img  src="https://github-readme-stats.vercel.app/api?username=angie161&show_icons=true&hide_border=true&line_height=20&bg_color=0,fd6e82,fc977f&theme=graywhite"/>
+  <img  src="https://github-readme-stats.vercel.app/api?username=rhussu&show_icons=true&hide_border=true&line_height=20&bg_color=0,fc977f,ffdd3f&theme=graywhite"/>
 </p>
 </details>
 
