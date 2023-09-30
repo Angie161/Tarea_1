@@ -13,6 +13,7 @@ public abstract class DocTributario {
 	protected Date fecha;
 	protected String numero;
 	protected String rut;
+	protected String direccion;
 
 	/**
 	 * Método getter de "número".
@@ -39,5 +40,14 @@ public abstract class DocTributario {
 	 */
 	public Date getFecha() {
 		return fecha;
+	}
+
+	/**
+	 * Método getter de "dirección".
+	 * 
+	 * @return La dirección del documento.
+	 */
+	public String getDireccion() {
+		return direccion;
 	}
 }
