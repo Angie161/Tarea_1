@@ -115,7 +115,7 @@ public class OrdenCompra {
 			if(boletaFactura.equals("boleta") && monto >= this.calcPrecio()){
 				if(pago.length == 1) {
 					try{
-						System.out.println("Su vuelto es CLP " + String.valueOf(pago[0].calDevolucion(this)) + ".");	
+						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calDevolucion(this)) + ".");	
 					}catch(NoSuchMethodError e) {;}
 				}
 				estado = "Pagado";
@@ -124,7 +124,7 @@ public class OrdenCompra {
 			} else if(boletaFactura.equals("factura") && monto >= this.calcPrecio()) {
 				if(pago.length == 1) {
 					try{
-						System.out.println("Su vuelto es CLP " + String.valueOf(pago[0].calDevolucion(this)) + ".");	
+						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calDevolucion(this)) + ".");	
 					}catch(NoSuchMethodError e) {;}
 				}
 				estado = "Pagado";
