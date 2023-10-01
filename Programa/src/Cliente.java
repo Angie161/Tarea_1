@@ -12,16 +12,7 @@ public class Cliente {
 	private String direccion;
 
 	/**
-	 * Constructor por defecto.
-	 */
-	public Cliente() {
-		nombre = "------";
-		rut = "00.000.000-0";
-		direccion = "-------------";
-	}
-
-	/**
-	 * Costructor con nombre, rut y dirección espesificos.
+	 * Costructor con nombre y rut.
 	 * 
 	 * @param nombre    El texto que representa el nombre del cliente.
 	 * @param rut       El texto que representa el rut del cliente.
