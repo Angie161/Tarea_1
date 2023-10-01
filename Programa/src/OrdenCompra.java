@@ -3,12 +3,12 @@ import java.util.ArrayList;
 
 
 /**
- * Esta clase es la encargada de gestionar la compra de articulos.
+ * Esta clase es la encargada de gestionar la compra de artículos.
  */
 public class OrdenCompra {
 
 	/**
-	 * Caracteristicas de OrdenCompra (Variables)	 
+	 * Características de OrdenCompra (Variables)
 	 */
 	private Date fecha;
 	private String estado;
@@ -26,7 +26,7 @@ public class OrdenCompra {
 	/**
 	 * Constructor personalizado.
 	 * 
-	 * @param detalleOrden Un objeto de tipo "DetalleOrden" que repesenta cosas que se quieren comprar.
+	 * @param detalleOrden Un objeto de tipo "DetalleOrden" que representa cosas que se quieren comprar.
 	 */
 	public OrdenCompra(DetalleOrden detalleOrden) {
 		fecha = new Date();
@@ -47,7 +47,7 @@ public class OrdenCompra {
 	/**
 	 * Método para añadir una orden de compra (DetalleOrden).
 	 * 
-	 * @param detalleOrden Un objeto de tipo "DetalleOrden" que repesenta cosas que se quieren comprar.
+	 * @param detalleOrden Un objeto de tipo "DetalleOrden" que representa cosas que se quieren comprar.
 	 */
 	public void addDetalleOrden(DetalleOrden detalleOrden) {
 		detallesOrdenes.add(detalleOrden);
@@ -100,11 +100,11 @@ public class OrdenCompra {
 	/**
 	 * Método para pagar la orden.
 	 * 
-	 * @param cliente       La persona que esta comprando los articulos.
+	 * @param cliente       La persona que está comprando los artículos.
 	 * @param pago          Un arreglo de pagos para poder comprar la orden.
-	 * @param boletaFactura El tipo de documetno tributario que se desea, puede ser solo "boleta" o "factura".
+	 * @param boletaFactura El tipo de documento tributario que se desea, puede ser solo "boleta" o "factura".
 	 * 
-	 * agregar en clacular debolucion que te devuelva el dinero solo si 
+	 * Agregar en calcular devolución que te devuelva el dinero solo si
 	 */
 	public DocTributario pagar(Cliente cliente, Pago[] pago, String boletaFactura) {
 		if(!estado.equals("Pagado")){
@@ -116,7 +116,7 @@ public class OrdenCompra {
 				if(pago.length == 1) {
 					try{
 						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calDevolucion(this)) + ".");	
-					}catch(NoSuchMethodError e) {;}
+					}catch(Exception e) {;}
 				}
 				estado = "Pagado";
 				System.out.println(this);
@@ -125,7 +125,7 @@ public class OrdenCompra {
 				if(pago.length == 1) {
 					try{
 						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calDevolucion(this)) + ".");	
-					}catch(NoSuchMethodError e) {;}
+					}catch(Exception e) {;}
 				}
 				estado = "Pagado";
 				System.out.println(this);
@@ -149,7 +149,7 @@ public class OrdenCompra {
 	/**
 	 * Override del método toString().
 	 * 
-	 * @return Información sobre la OrdenCoompra.
+	 * @return Información sobre la OrdenCompra.
 	 */
 	@Override
 	public String toString() {
