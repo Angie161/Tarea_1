@@ -1,18 +1,21 @@
 /**
- * Esta clase almacenará y mostrará la información de cada artículo pedido por el cliente.
+ * Esta clase almacenará y mostrará la información de cada artículo pedido por el cliente,
+ * lo que permitirá posteriormente el cálculo del peso y los diferentes precios a pagar en la clase DetalleOrden.
  */
 public class Articulo {
-    /** Variable float que almacenará el peso del artículo. */
+
+    /** Características de la clase Artículo*/
     private float peso;
-    /** String con el nombre del producto. */
     private String nombre;
-    /** String con la descripción general del producto. */
     private String descripción;
-    /** Float que contendrá el valor del artículo en pesos chilenos. */
     private float precio;
 
     /**
      * Constructor de la clase Artículo.
+     * @param peso float con el peso del artículo en kilogramos.
+     * @param nombre String que contiene el nombre del artículo.
+     * @param descripción String con la descripción general del producto.
+     * @param precio float con el precio del artículo en pesos chilenos.
      */
     public Articulo(float peso, String nombre, String descripción, float precio){
     this.peso=peso;
@@ -23,11 +26,11 @@ public class Articulo {
 
     /**
      * Override del método toString. Devuelve la información almacenada del producto.
-     * @return cadena de String con los datos del producto.
+     * @return Una cadena de texto con los datos del producto.
      */
     @Override
     public String toString(){
-        return "Nombre: "+nombre+", descripción: "+descripción+", peso del producto: "+String.valueOf(peso)+", precio: "+String.valueOf(precio)+" pesos chilenos.";
+        return "Nombre: "+nombre+", descripción: "+descripción+", peso del producto: "+String.valueOf(peso)+"kg, precio: "+String.valueOf(precio)+" pesos chilenos.";
     }
 
     /**
@@ -52,6 +55,14 @@ public class Articulo {
      */
     public String getDescripción(){
         return descripción;
+    }
+
+    /**
+     * Getter de los datos almacenados en la variable precio.
+     * @return float con el precio del producto.
+     */
+    public float getPrecio(){
+        return precio;
     }
 
 }
