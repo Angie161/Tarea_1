@@ -83,17 +83,25 @@ public class DetalleOrden {
     @Override
     public String toString(){
         StringBuilder cadena = new StringBuilder();
-        cadena.append(", Articulos solicitados: ");
-        for(int i=0; i<detalle.size();i++){
-            cadena.append(detalle.get(i).getNombreArt());
-            if(i==detalle.size()-1){
-                cadena.append(" ");
+        try{
+            if(detalle.size()==0){
+                return "La Cantidad de productos es de "+String.valueOf(cantidad)+" y los Productos solicitados son: Ninguno.";
             }
-            else{
-                cadena.append(", ");
+            for(int i=0; i<detalle.size();i++){
+                cadena.append(detalle.get(i).getNombreArt());
+                if(i==detalle.size()-1){
+                    cadena.append(".");
+                }
+                else{
+                    cadena.append(", ");
+                }
             }
+
+            return "La cantidad de productos es de "+String.valueOf(cantidad)+" y los productos solicitados son: "+cadena;
+        }catch(ArrayIndexOutOfBoundsException e){
+            return "La cantidad de productos es de "+String.valueOf(cantidad)+" y los productos solicitados son: Ninguno.";
         }
 
-        return "Cantidad de productos: "+String.valueOf(cantidad)+cadena;
     }
 }
+//Agregado de Catch para arreglo vacío y cambio en el string que se devuelve en toString
