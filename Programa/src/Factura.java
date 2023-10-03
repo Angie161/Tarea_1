@@ -25,11 +25,11 @@ public class Factura extends DocTributario {
 	 * @param rut El rut del cliente.
 	 * @param direccion La dirección del cliente.
 	 */
-	public Factura(String rut, String direccion) {
+	public Factura(String rut, Direccion direccion) {
 		fecha = new Date();
 		numero = String.valueOf(fecha.getTime());
 		this.rut = rut;
-		this.direccion = direccion;
+		this.direccion = direccion.getDireccion();
 
 		// Esto tiene el unico objetivo de hacer que dos boletas nunca tengan el mismo numero ya que hace que demore mas el construirla.
 		this.toString();
