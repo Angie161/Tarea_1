@@ -20,7 +20,7 @@ public class OrdenCompra {
 	 */
 	public OrdenCompra() {
 		fecha = new Date();
-		estado = "En espera";
+		estado = "en espera";
 		detallesOrdenes = new ArrayList<DetalleOrden>();
 		montoPagado = 0;
 	}
@@ -83,7 +83,7 @@ public class OrdenCompra {
 	 * @return El precio con IVA de la orden.
 	 */
 	public float calcPrecio() {
-		return calcPrecioSinIVA()*1.19f - montoPagado;
+		return calcPrecioSinIVA()*1.19f;
 	}
 
 	/**
@@ -100,6 +100,15 @@ public class OrdenCompra {
 	}
 
 	/**
+	 * Método para calcular el dinero que falta por pagar de la orden.
+	 * 
+	 * @return El precio faltante por pagar.
+	 */
+	private float calcMontoFaltante() {
+		return calcPrecio() - montoPagado;
+	}
+
+	/**
 	 * Método para pagar la orden.
 	 * 
 	 * @param cliente       La persona que está comprando los artículos.
@@ -110,34 +119,34 @@ public class OrdenCompra {
 	 * Agregar en calcular devolución que te devuelva el dinero solo si
 	 */
 	public DocTributario pagar(Cliente cliente, Pago[] pago, String boletaFactura, Direccion direccion) {
-		if(!estado.equals("Pagado")){
+		if(!estado.equals("pagada")){
 			float monto = 0;
 			for(int i = 0; i < pago.length; i++) {
 				monto += pago[i].GetMonto();
 			}
-			if(boletaFactura.equals("boleta") && monto >= this.calcPrecio()){
+			if(boletaFactura.equals("boleta") && monto >= this.calcMontoFaltante()){
 				if(pago.length == 1) {
 					try{
 						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calcDevolucion(this)) + ".");	
 					}catch(Exception e) {;}
 				}
-				estado = "Pagado";
+				estado = "pagada";
 				System.out.println(this);
 				return new Boleta(cliente.getRut(), direccion);
-			} else if(boletaFactura.equals("factura") && monto >= this.calcPrecio()) {
+			} else if(boletaFactura.equals("factura") && monto >= this.calcMontoFaltante()) {
 				if(pago.length == 1) {
 					try{
 						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calcDevolucion(this)) + ".");	
 					}catch(Exception e) {;}
 				}
-				estado = "Pagado";
+				estado = "pagada";
 				System.out.println(this);
 				return new Factura(cliente.getRut(), direccion);
-			} else if(!boletaFactura.equals("factura") && !boletaFactura.equals("boleta") && monto >= this.calcPrecio()) {
+			} else if(!boletaFactura.equals("factura") && !boletaFactura.equals("boleta") && monto >= this.calcMontoFaltante()) {
 				System.out.println("Error al ingresar el tipo de documento tributario, ingrese : \"boleta\" o \"factura\".");
 				return null;
-			} else if (monto < this.calcPrecio()) {
-				System.out.println("Pago inferior al precio de la orden.");
+			} else if (monto < this.calcMontoFaltante()) {
+				System.out.println("Pago inferior al precio de la orden, ingrese dinero faltante.");
 				montoPagado = monto;
 				return null;
 			} else {
