@@ -13,6 +13,7 @@ public class OrdenCompra {
 	private Date fecha;
 	private String estado;
 	private ArrayList<DetalleOrden> detallesOrdenes;
+	private float montoPagado;
 
 	/**
 	 * Constructor por defecto 
@@ -21,6 +22,7 @@ public class OrdenCompra {
 		fecha = new Date();
 		estado = "En espera";
 		detallesOrdenes = new ArrayList<DetalleOrden>();
+		montoPagado = 0;
 	}
 
 	/**
@@ -81,7 +83,7 @@ public class OrdenCompra {
 	 * @return El precio con IVA de la orden.
 	 */
 	public float calcPrecio() {
-		return calcPrecioSinIVA()*1.19f;
+		return calcPrecioSinIVA()*1.19f - montoPagado;
 	}
 
 	/**
@@ -115,7 +117,7 @@ public class OrdenCompra {
 			if(boletaFactura.equals("boleta") && monto >= this.calcPrecio()){
 				if(pago.length == 1) {
 					try{
-						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calDevolucion(this)) + ".");	
+						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calcDevolucion(this)) + ".");	
 					}catch(Exception e) {;}
 				}
 				estado = "Pagado";
@@ -124,7 +126,7 @@ public class OrdenCompra {
 			} else if(boletaFactura.equals("factura") && monto >= this.calcPrecio()) {
 				if(pago.length == 1) {
 					try{
-						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calDevolucion(this)) + ".");	
+						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calcDevolucion(this)) + ".");	
 					}catch(Exception e) {;}
 				}
 				estado = "Pagado";
@@ -135,6 +137,7 @@ public class OrdenCompra {
 				return null;
 			} else if (monto < this.calcPrecio()) {
 				System.out.println("Pago inferior al precio de la orden.");
+				montoPagado = monto;
 				return null;
 			} else {
 				System.out.println("Error desconocido.");
