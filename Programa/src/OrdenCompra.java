@@ -104,7 +104,7 @@ public class OrdenCompra {
 	 * 
 	 * @return El precio faltante por pagar.
 	 */
-	private float calcMontoFaltante() {
+	public float calcMontoFaltante() {
 		return calcPrecio() - montoPagado;
 	}
 
