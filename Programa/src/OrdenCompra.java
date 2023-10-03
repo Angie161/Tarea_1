@@ -105,10 +105,11 @@ public class OrdenCompra {
 	 * @param cliente       La persona que está comprando los artículos.
 	 * @param pago          Un arreglo de pagos para poder comprar la orden.
 	 * @param boletaFactura El tipo de documento tributario que se desea, puede ser solo "boleta" o "factura".
+	 * @param direccion     La dirección que se asociara con el documento tributario.
 	 * 
 	 * Agregar en calcular devolución que te devuelva el dinero solo si
 	 */
-	public DocTributario pagar(Cliente cliente, Pago[] pago, String boletaFactura) {
+	public DocTributario pagar(Cliente cliente, Pago[] pago, String boletaFactura, Direccion direccion) {
 		if(!estado.equals("Pagado")){
 			float monto = 0;
 			for(int i = 0; i < pago.length; i++) {
@@ -122,7 +123,7 @@ public class OrdenCompra {
 				}
 				estado = "Pagado";
 				System.out.println(this);
-				return new Boleta(cliente.getRut(), cliente.getDireccion());
+				return new Boleta(cliente.getRut(), direccion);
 			} else if(boletaFactura.equals("factura") && monto >= this.calcPrecio()) {
 				if(pago.length == 1) {
 					try{
@@ -131,7 +132,7 @@ public class OrdenCompra {
 				}
 				estado = "Pagado";
 				System.out.println(this);
-				return new Factura(cliente.getRut(), cliente.getDireccion());
+				return new Factura(cliente.getRut(), direccion);
 			} else if(!boletaFactura.equals("factura") && !boletaFactura.equals("boleta") && monto >= this.calcPrecio()) {
 				System.out.println("Error al ingresar el tipo de documento tributario, ingrese : \"boleta\" o \"factura\".");
 				return null;
