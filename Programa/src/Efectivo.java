@@ -15,15 +15,15 @@ class Efectivo extends Pago {
 
     /**
      * Calcula el cambio a entregar al realizar el pago.
-     * @param OrdenCompra Es un OrdenBoleta con el que accedemos al precio que se debe pagar.
+     * @param ordencompra Es un OrdenCompra con el que accedemos al precio que se debe pagar.
      * @return una variable float con el dinero sobrante.
      */
-    public float calDevolucion(OrdenCompra OrdenCompra){
-        if(OrdenCompra.calcPrecio()<GetMonto()){
-            return OrdenCompra.calcPrecio()-GetMonto();
+    public float calcDevolucion(OrdenCompra ordencompra){
+        if(ordencompra.calcMontoFaltante()>0){
+            return 0;
         }
         else{
-            return 0;
+            return -ordencompra.calcMontoFaltante();
         }
     }
 
