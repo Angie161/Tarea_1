@@ -11,34 +11,28 @@ public class Boleta extends DocTributario {
 	 */
 	public Boleta() {
 		fecha = new Date();
-		numero = "00000000";
+		numero = String.valueOf(fecha.getTime());
 		rut = "00.000.000-0";
+		direccion = "------------";
+
+		// Esto tiene el unico objetivo de hacer que dos boletas nunca tengan el mismo numero ya que hace que demore mas el construirla.
+		this.toString();
 	}
 
 	/**
-	 * Constructor para fecha actual.
+	 * Constructor personalizado.
 	 * 
-	 * @param numero El numero de documento.
-	 * @param rut    El rut del documento.
+	 * @param rut El rut del cliente.
+	 * @param direccion La dirección del cliente.
 	 */
-	public Boleta(String numero, String rut) {
+	public Boleta(String rut, Direccion direccion) {
 		fecha = new Date();
-		this.numero = numero;
+		numero = String.valueOf(fecha.getTime());
 		this.rut = rut;
-	}
+		this.direccion = direccion.getDireccion();
 
-	/**
-	 * Constructor para fecha espesifica.
-	 * 
-	 * @param numero 	  El numero de documento.
-	 * @param rut   	  El rut del documento.
-	 * @param tiempoAtras La diferencia de tiempo entre la fecha actual y la fecha que deseo en milisegundos.
-	 */
-	@Deprecated
-	public Boleta(String numero, String rut, long tiempoAtras) {
-		fecha = new Date(tiempoAtras);
-		this.numero = numero;
-		this.rut = rut;
+		// Esto tiene el unico objetivo de hacer que dos boletas nunca tengan el mismo numero ya que hace que demore mas el construirla.
+		this.toString();
 	}
 
 	/**
@@ -49,6 +43,6 @@ public class Boleta extends DocTributario {
 	@Override
 	public String toString() {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		return "La Boleta " + numero + " con el rut" + rut + " fue generado en la fecha: " + formato.format(fecha) + ".";
+		return "La Boleta " + numero + " con el rut " + rut + " fue generado en la fecha: " + formato.format(fecha) + ".";
 	}
 }

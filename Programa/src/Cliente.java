@@ -12,12 +12,15 @@ public class Cliente {
 	private String direccion;
 
 	/**
-	 * Constructor por defecto.
+	 * Costructor con nombre y rut.
+	 * 
+	 * @param nombre    El texto que representa el nombre del cliente.
+	 * @param rut       El texto que representa el rut del cliente.
 	 */
-	public Cliente() {
-		nombre = "------";
-		rut = "00.000.000-0";
-		direccion = "-------------";
+	public Cliente(String nombre, String rut) {
+		this.nombre = nombre;
+		this.rut = rut;
+		this.direccion = "-------------";
 	}
 
 	/**
@@ -58,6 +61,15 @@ public class Cliente {
 	 */
 	public String getDireccion() {
 		return direccion;
+	}
+
+	/**
+	 * Método setter de "dirección".
+	 * 
+	 * @param direccion El objeto que representa la direccion que queremos asignarle (debe ser de clase Direccion).
+	 */
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion.getDireccion();
 	}
 
 	/**
