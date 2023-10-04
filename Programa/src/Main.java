@@ -80,13 +80,14 @@ public class Main {
         OrdenWalter.pagar(Walter,PagosAEfectuar,"boleta",direccion1);
         System.out.println("Su vuelto es CLP "+cincomil.calcDevolucion(OrdenWalter)+".");
         System.out.println("Estado: "+OrdenWalter.toString());
-        System.out.println("Dinero por pagar: CLP "+OrdenWalter.calcPrecio()+"\n");
+        System.out.println("Dinero por pagar: CLP "+OrdenWalter.calcMontoFaltante()+"\n");
 
         Pago[] PagosAEfectuar2 = new Pago[1];
         Efectivo sietemil = new Efectivo(7000);
         PagosAEfectuar2[0]=sietemil;
         System.out.println("*Walter efectúa un pago de 7000 pesos, elije boleta*");
         OrdenWalter.pagar(Walter,PagosAEfectuar2,"boleta",direccion1);
+        System.out.println("Dinero por pagar: CLP "+OrdenWalter.calcMontoFaltante()+"\n");
 
         //-----------------------------------------Segunda Prueba General----------------------------------------
         System.out.println("----------------------------------------Segundo Cliente-----------------------------------------");
@@ -152,6 +153,6 @@ public class Main {
         Tarjeta[0]=Deb;
         System.out.println("*Angie efectúa un pago con tarjeta con la cantidad exacta, elije boleta*");
         System.out.println(Deb.toString());
-        OrdenWalter.pagar(Angie,Tarjeta,"boleta",direccion2);
+        SegOrdenAngie.pagar(Angie,Tarjeta,"boleta",direccion2);
     }
 }
