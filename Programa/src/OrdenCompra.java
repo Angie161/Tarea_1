@@ -105,7 +105,12 @@ public class OrdenCompra {
 	 * @return El precio faltante por pagar.
 	 */
 	public float calcMontoFaltante() {
-		return calcPrecio() - montoPagado;
+		if(this.estado.equals("pagada")){
+			return 0;
+		}
+		else{
+			return calcPrecio()-montoPagado;
+		}
 	}
 
 	/**
@@ -127,7 +132,8 @@ public class OrdenCompra {
 			if(boletaFactura.equals("boleta") && monto >= this.calcMontoFaltante()){
 				if(pago.length == 1) {
 					try{
-						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calcDevolucion(this)) + ".");	
+						montoPagado+=monto;
+						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calcDevolucion(this)) + ".");
 					}catch(Exception e) {;}
 				}
 				estado = "pagada";
@@ -136,7 +142,9 @@ public class OrdenCompra {
 			} else if(boletaFactura.equals("factura") && monto >= this.calcMontoFaltante()) {
 				if(pago.length == 1) {
 					try{
-						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calcDevolucion(this)) + ".");	
+						montoPagado+=monto;
+						System.out.println("Su vuelto es CLP " + String.valueOf(((Efectivo) pago[0]).calcDevolucion(this)) + ".");
+
 					}catch(Exception e) {;}
 				}
 				estado = "pagada";
@@ -147,7 +155,7 @@ public class OrdenCompra {
 				return null;
 			} else if (monto < this.calcMontoFaltante()) {
 				System.out.println("Pago inferior al precio de la orden, ingrese dinero faltante.");
-				montoPagado = monto;
+				montoPagado+= monto; //Agregado de += (Antes estaba solo el =)
 				return null;
 			} else {
 				System.out.println("Error desconocido.");
