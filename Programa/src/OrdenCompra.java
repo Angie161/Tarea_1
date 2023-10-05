@@ -121,8 +121,7 @@ public class OrdenCompra {
 	 * @param pago          Un arreglo de pagos para poder comprar la orden.
 	 * @param boletaFactura El tipo de documento tributario que se desea, puede ser solo "boleta" o "factura".
 	 * @param direccion     La dirección que se asociara con el documento tributario.
-	 * 
-	 * Agregar en calcular devolución que te devuelva el dinero solo si
+	 * @return              Una boleta o factura relacionada con la compra de la orden,
 	 */
 	public DocTributario pagar(Cliente cliente, Pago[] pago, String boletaFactura, Direccion direccion) {
 		if(!estado.equals("pagada")){
