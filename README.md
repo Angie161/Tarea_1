@@ -28,9 +28,9 @@ Ejecuta el método main de la clase `Main` para obtener resultados detallados a 
 
 ### 2.- Interfaz Gráfica
 
-Para una comprensión visual más clara, hemos implementado una interfaz gráfica. Ejecuta el archivo `Angers_Story.java` para abrir una ventana interactiva que permitirá a los usuarios interactuar directamente. Obtén más detalles sobre la interfaz gráfica consultando la documentación del archivo `Angers_Store.java` en `index.html`.
+Para una comprensión visual más clara, hemos implementado una interfaz gráfica. Ejecuta el archivo `Angers_Story.java` para abrir una ventana interactiva que permitirá a los usuarios interactuar directamente.
 
-Recuerda revisar la documentación para obtener una comprensión más completa del programa en el archivo "index.html" de la carpeta "Docs".
+Obtén más detalles sobre la interfaz gráfica y el resto del programa revisando la documentación en `index.html`.
 
 ---
 
