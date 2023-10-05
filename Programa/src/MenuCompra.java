@@ -89,6 +89,7 @@ public class MenuCompra {
         	fuentePersonalizada = Font.createFont(Font.TRUETYPE_FONT, new File(rutaFuente));
         } catch (Exception e) {
         	e.printStackTrace();System.err.println("Error al cargar la fuente: " + e.getMessage());
+			fuentePersonalizada = new Font("Arial", Font.PLAIN, 12);
         }
 
 		//   ▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽▽

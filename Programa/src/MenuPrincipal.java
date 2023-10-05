@@ -58,6 +58,7 @@ public class MenuPrincipal {
         	fuentePersonalizada = Font.createFont(Font.TRUETYPE_FONT, new File(this.rutaFuente));
         } catch (Exception e) {
         	e.printStackTrace();System.err.println("Error al cargar la fuente: " + e.getMessage());
+			fuentePersonalizada = new Font("Arial", Font.PLAIN, 12);
         }
 
 	// Iniciando mi ventana
@@ -352,7 +353,7 @@ public class MenuPrincipal {
 		// Boton para volver
 		back = new JButton();
 		back.setContentAreaFilled(false);
-		back.setIcon(new ImageIcon("Imagenes\\back.png"));
+		back.setIcon(new ImageIcon(rutaIcono.substring(0,rutaIcono.length() - 10) + "/back.png"));
 		back.setBorderPainted(false);
 		back.setBounds(13,10,40,40);
 		back.setFocusPainted(false);

@@ -92,6 +92,7 @@ public class MenuPago {
         	fuentePersonalizada = Font.createFont(Font.TRUETYPE_FONT, new File(rutaFuente));
         } catch (Exception e) {
         	e.printStackTrace();System.err.println("Error al cargar la fuente: " + e.getMessage());
+			fuentePersonalizada = new Font("Arial", Font.PLAIN, 12);
         }
 
 
@@ -869,7 +870,7 @@ public class MenuPago {
 			            		else if(x == 137) {titulo12.setText("Efectivo      : CLP " + pagos[0].getMonto());}
 			            		else if(x == 141) {
 			            			if(pago == 1) {
-			            				titulo13.setText("Vuelto        : CLP " + ((Efectivo) pagos[0]).calcDevolucion(ordenCompra));
+										titulo13.setText("Vuelto        : CLP " + (pagos[0].getMonto() - ordenCompra.calcPrecio())); // Sin uso de .calcDevolucion() debido a reaccion imprevista despues de adaptacion para su funcionamiento en el metodo Main (el evaluado).
 			            			}else if(pago == 2) {
 			            				titulo13.setText("Pagado con   : Tarjeta");
 			            			}else if(pago == 3) {
@@ -1039,7 +1040,7 @@ public class MenuPago {
 			            		else if(x == 137) {titulo12.setText("Efectivo      : CLP " + pagos[0].getMonto());}
 			            		else if(x == 141) {
 			            			if(pago == 1) {
-			            				titulo13.setText("Vuelto        : CLP " + ((Efectivo) pagos[0]).calcDevolucion(ordenCompra));
+			            				titulo13.setText("Vuelto        : CLP " + (pagos[0].getMonto() - ordenCompra.calcPrecio())); // Sin uso de .calcDevolucion() debido a reaccion imprevista despues de adaptacion para su funcionamiento en el metodo Main (el evaluado).
 			            			}else if(pago == 2) {
 			            				titulo13.setText("Pagado con   : Tarjeta");
 			            			}else if(pago == 3) {
