@@ -17,7 +17,7 @@ public class Angers_Store {
      * que pasarle las rutas hacia las carpetas "Imágenes" y "Fuentes".
      * En teoría  no  debería  haber  ningún  error  con lo que ya está
      * colocado, pero  si  lo  llega  a  haber  se recomienda poner las
-     * rutas  absolutas  hacia  los  archivos  "Imágenes  y Fuentes" de
+     * rutas absolutas  hacia  las  carpetas  "Imágenes" y "Fuentes" de
      * la siguiente manera:
      * 
      * MenuPrincipal("C:/aquí/la/ruta/absoluta/a/Imágenes", "C:/aquí/la/ruta/absoluta/a/Fuentes");
