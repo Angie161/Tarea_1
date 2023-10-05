@@ -108,32 +108,32 @@ public class MenuCompra {
 		hamburguesaDO_3 = new DetalleOrden();
 		papitasDO_3     = new DetalleOrden();
 
-		bebidaDO.AgregarArticulo(bebidaA);
+		bebidaDO.agregarArticulo(bebidaA);
 
 		// Orden 1
 		ordenCompra_1 = new OrdenCompra(bebidaDO);
-		hamburguesaDO.AgregarArticulo(hamburguesaA);
-		hamburguesaDO.AgregarArticulo(hamburguesaA);
-		papitasDO.AgregarArticulo(papitasA);
+		hamburguesaDO.agregarArticulo(hamburguesaA);
+		hamburguesaDO.agregarArticulo(hamburguesaA);
+		papitasDO.agregarArticulo(papitasA);
 		ordenCompra_1.addDetalleOrden(hamburguesaDO);
 		ordenCompra_1.addDetalleOrden(papitasDO);
 
 		// Orden 2
 		ordenCompra_2 = new OrdenCompra(bebidaDO);
-		completoDO_2.AgregarArticulo(completoA);
-		completoDO_2.AgregarArticulo(completoA);
-		papitasDO_2.AgregarArticulo(papitasA);
+		completoDO_2.agregarArticulo(completoA);
+		completoDO_2.agregarArticulo(completoA);
+		papitasDO_2.agregarArticulo(papitasA);
 		ordenCompra_2.addDetalleOrden(completoDO_2);
 		ordenCompra_2.addDetalleOrden(papitasDO_2);
 
 
 		// Orden 3
 		ordenCompra_3 = new OrdenCompra(bebidaDO);
-		hamburguesaDO_3.AgregarArticulo(hamburguesaA);
-		completoDO_3.AgregarArticulo(completoA);
-		papitasDO_3.AgregarArticulo(papitasA);
-		papitasDO_3.AgregarArticulo(papitasA);
-		papitasDO_3.AgregarArticulo(papitasA);
+		hamburguesaDO_3.agregarArticulo(hamburguesaA);
+		completoDO_3.agregarArticulo(completoA);
+		papitasDO_3.agregarArticulo(papitasA);
+		papitasDO_3.agregarArticulo(papitasA);
+		papitasDO_3.agregarArticulo(papitasA);
 		ordenCompra_3.addDetalleOrden(hamburguesaDO_3);
 		ordenCompra_3.addDetalleOrden(completoDO_3);
 		ordenCompra_3.addDetalleOrden(papitasDO_3);
@@ -248,42 +248,42 @@ public class MenuCompra {
                 } else if(x%5 == 0 && pedido == 1) {
                 	x = 7;
                 	aux.setText(papitasA.getNombreArt() + ", peso: " + papitasA.getPeso()*1000 + " gr.");
-                	auxDes.setText(papitasA.getDescripción());
+                	auxDes.setText(papitasA.getDescripcion());
                 } else if(x%6 == 0 && pedido == 1) {
                 	aux.setText(hamburguesaA.getNombreArt() + ", peso: " + hamburguesaA.getPeso()*1000 + " gr.");
-                	auxDes.setText(hamburguesaA.getDescripción());
+                	auxDes.setText(hamburguesaA.getDescripcion());
                 	x--;
                 } else if(x%1 == 0 && pedido == 1) {
                 	aux.setText(bebidaA.getNombreArt() + ", peso: " + bebidaA.getPeso()*1000 + " gr.");
-                	auxDes.setText(bebidaA.getDescripción());
+                	auxDes.setText(bebidaA.getDescripcion());
                 	x--;           
                 } else if(x%5 == 0 && pedido == 2) {
                 	x = 7;
                 	aux.setText(papitasA.getNombreArt() + ", peso: " + papitasA.getPeso()*1000 + " gr.");
-                	auxDes.setText(papitasA.getDescripción());
+                	auxDes.setText(papitasA.getDescripcion());
                 } else if(x%6 == 0 && pedido == 2) {
                 	aux.setText(completoA.getNombreArt() + ", peso: " + completoA.getPeso()*1000 + " gr.");
-                	auxDes.setText(completoA.getDescripción());
+                	auxDes.setText(completoA.getDescripcion());
                 	x--;
                 } else if(x%1 == 0 && pedido == 2) {
                 	aux.setText(bebidaA.getNombreArt() + ", peso: " + bebidaA.getPeso()*1000 + " gr.");
-                	auxDes.setText(bebidaA.getDescripción());
+                	auxDes.setText(bebidaA.getDescripcion());
                 	x--;           
                 } else if(x%4 == 0 && pedido == 3) {
                 	x = 7;
                 	aux.setText(papitasA.getNombreArt() + ", peso: " + papitasA.getPeso()*1000 + " gr.");
-                	auxDes.setText(papitasA.getDescripción());
+                	auxDes.setText(papitasA.getDescripcion());
                 } else if(x%5 == 0 && pedido == 3) {
                 	aux.setText(completoA.getNombreArt() + ", peso: " + completoA.getPeso()*1000 + " gr.");
-                	auxDes.setText(completoA.getDescripción());
+                	auxDes.setText(completoA.getDescripcion());
                 	x--;
                 } else if(x%6 == 0 && pedido == 3) {
                 	aux.setText(hamburguesaA.getNombreArt() + ", peso: " + hamburguesaA.getPeso()*1000 + " gr.");
-                	auxDes.setText(hamburguesaA.getDescripción());
+                	auxDes.setText(hamburguesaA.getDescripcion());
                 	x--;
                 } else if(x%1 == 0 && pedido == 3) {
                 	aux.setText(bebidaA.getNombreArt() + ", peso: " + bebidaA.getPeso()*1000 + " gr.");
-                	auxDes.setText(bebidaA.getDescripción());
+                	auxDes.setText(bebidaA.getDescripcion());
                 	x--;           
                 }
             }
