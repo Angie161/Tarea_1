@@ -3,7 +3,7 @@
  *
  * @author Angie Ramírez
  */
-class Efectivo extends Pago {
+public class Efectivo extends Pago {
     /**
      * Método constructor de la clase Efectivo, que hereda los datos de la clase Pago.
      * @param monto float con la cantidad de dinero a pagar.
