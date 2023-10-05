@@ -1,5 +1,7 @@
 /**
  * Clase que representa una dirección, es decir, un lugar en este planeta.
+ *
+ * @author Walter Zárate
  */
 public class Direccion {
 
@@ -16,7 +18,7 @@ public class Direccion {
 	}
 
 	/**
-	 * Constructor con dirección espesificada.
+	 * Constructor con dirección especificada.
 	 * 
 	 * @param direccion El texto que representa la dirección.
 	 */

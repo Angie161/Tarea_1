@@ -1,18 +1,20 @@
 /**
- * Esta clase es una simulacion de una persona que es cliente.
+ * Esta clase es una simulación de una persona que es cliente.
+ *
+ * @author Walter Zárate
  */
 
 public class Cliente {
 
 	/**
-	 * Caracteristicas de "Cliente" (Variables).
+	 * Características de "Cliente" (Variables).
 	 */
 	private String nombre;
 	private String rut;
 	private String direccion;
 
 	/**
-	 * Costructor con nombre y rut.
+	 * Constructor con nombre y rut.
 	 * 
 	 * @param nombre    El texto que representa el nombre del cliente.
 	 * @param rut       El texto que representa el rut del cliente.
@@ -24,11 +26,11 @@ public class Cliente {
 	}
 
 	/**
-	 * Costructor con nombre, rut y dirección espesificos.
+	 * Constructor con nombre, rut y dirección específicos.
 	 * 
 	 * @param nombre    El texto que representa el nombre del cliente.
 	 * @param rut       El texto que representa el rut del cliente.
-	 * @param direccion La texto que representa la dirección del cliente.
+	 * @param direccion El texto que representa la dirección del cliente.
 	 */
 	public Cliente(String nombre, String rut, Direccion direccion) {
 		this.nombre = nombre;
@@ -57,7 +59,7 @@ public class Cliente {
 	/**
 	 * Método getter de "dirección".
 	 * 
-	 * @return La direccion del cliente.
+	 * @return La dirección del cliente.
 	 */
 	public String getDireccion() {
 		return direccion;
@@ -66,7 +68,7 @@ public class Cliente {
 	/**
 	 * Método setter de "dirección".
 	 * 
-	 * @param direccion El objeto que representa la direccion que queremos asignarle (debe ser de clase Direccion).
+	 * @param direccion El objeto que representa la dirección que queremos asignarle (debe ser de clase Direccion).
 	 */
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion.getDireccion();
@@ -75,7 +77,7 @@ public class Cliente {
 	/**
 	 * Override del método toString().
 	 * 
-	 * @return Las caracteristicas del objeto en un texto personalizado.
+	 * @return Las características del objeto en un texto personalizado.
 	 */
 	@Override
 	public String toString() {

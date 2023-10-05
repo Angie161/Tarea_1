@@ -3,7 +3,9 @@ import java.text.SimpleDateFormat;
 
 /**
  * Esta es una clase abstracta que representa un documento tributario 
- * que puede ser boleta o factura, estas dos seran las subclases.
+ * que puede ser boleta o factura, estas dos serán las subclases.
+ *
+ * @author Walter Zárate
  */
 public abstract class DocTributario {
 

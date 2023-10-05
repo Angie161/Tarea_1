@@ -3,6 +3,8 @@ import java.text.SimpleDateFormat;
 
 /**
  * Esta es una subclase de la clase DocTributario.
+ *
+ * @author Walter Zárate
  */
 public class Boleta extends DocTributario {
 
@@ -15,7 +17,7 @@ public class Boleta extends DocTributario {
 		rut = "00.000.000-0";
 		direccion = "------------";
 
-		// Esto tiene el unico objetivo de hacer que dos boletas nunca tengan el mismo numero ya que hace que demore mas el construirla.
+		// Esto tiene el único objetivo de hacer que dos boletas nunca tengan el mismo número, ya que hace que demore más el construirla.
 		this.toString();
 	}
 
@@ -31,7 +33,7 @@ public class Boleta extends DocTributario {
 		this.rut = rut;
 		this.direccion = direccion.getDireccion();
 
-		// Esto tiene el unico objetivo de hacer que dos boletas nunca tengan el mismo numero ya que hace que demore mas el construirla.
+		// Esto tiene el unico objetivo de hacer que dos boletas nunca tengan el mismo número, ya que hace que demore más el construirla.
 		this.toString();
 	}
 
