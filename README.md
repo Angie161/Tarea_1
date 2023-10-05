@@ -11,6 +11,27 @@ El propósito central de este proyecto consiste en realizar una implementación 
 
 Si, ChatGPT tuvo algo que ver 🤫.  
 
+## 📋 Instrucciones de ejecución
+
+Antes que nada, destacar que toda la documentación del programa se encuentra en el archivo `index.html` dentro de la carpeta "Docs".
+
+Existen dos formas de eveluar la funcionalidad de nuestro programa:
+
+### 1.- Ejecución mediante el Método Main
+
+Ejecuta el método main de la clase `Main` para obtener resultados detallados a través de la terminal. Estas pruebas cubren los métodos principales de cada clase y sus interrelaciones. Para nuestro proyecto centrado en la representación de un sistema de ventas, estas pruebas implican:
+
+- 2 clientes.
+- Creación de más de 5 artículos.
+- Generación de 3 órdenes de venta.
+- Realización de 4 pagos en total.
+
+### 2.- Interfaz Gráfica
+
+Para una comprensión visual más clara, hemos implementado una interfaz gráfica. Ejecuta el archivo `Angers_Story.java` para abrir una ventana interactiva que permitirá a los usuarios interactuar directamente. Obtén más detalles sobre la interfaz gráfica consultando la documentación del archivo `Angers_Store.java` en `index.html`.
+
+Recuerda revisar la documentación para obtener una comprensión más completa del programa en el archivo "index.html" de la carpeta "Docs".
+
 ---
 
 ### 🤝🏻 Contribuidores
