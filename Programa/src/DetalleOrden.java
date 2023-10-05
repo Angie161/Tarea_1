@@ -3,6 +3,8 @@ import java.util.ArrayList;
 /**
  * Esta clase simula el detalle de orden de la Orden de compra, la cual nos permitirá conocer los detalles de los artículos del cliente.
  * Permite calcular el peso y precio de cada uno de estos para luego ser almacenados en OrdenCompra.
+ *
+ * @author Angie Ramírez
  */
 
 public class DetalleOrden {
@@ -23,7 +25,7 @@ public class DetalleOrden {
     /** Adiciona productos al arreglo de artículos, aumentando la cantidad de estos en 1.
      * @param articulo Producto a agregar
      */
-    public void AgregarArticulo(Articulo articulo){
+    public void agregarArticulo(Articulo articulo){
         cantidad++;
         detalle.add(articulo);
     }
@@ -61,11 +63,11 @@ public class DetalleOrden {
      * @return float con el peso correspondiente, que será expresado en kilogramos.
      */
     public float calcPeso(){
-        float PesoT=0;
+        float pesoT=0;
         for(int i=0; i<detalle.size();i++){
-            PesoT+=detalle.get(i).getPeso();
+            pesoT+=detalle.get(i).getPeso();
         }
-        return PesoT;
+        return pesoT;
     }
 
     /**
@@ -101,7 +103,5 @@ public class DetalleOrden {
         }catch(ArrayIndexOutOfBoundsException e){
             return "La cantidad de productos es de "+String.valueOf(cantidad)+" y los productos solicitados son: Ninguno.";
         }
-
     }
 }
-//Agregado de Catch para arreglo vacío y cambio en el string que se devuelve en toString

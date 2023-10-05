@@ -2,7 +2,6 @@
  * Subclase de Pago, la cual permite realizar la compra con dinero en efectivo.
  *
  * @author Angie Ramírez
- * @version 2, 28 de Septiembre del 2023
  */
 class Efectivo extends Pago {
     /**

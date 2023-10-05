@@ -1,9 +1,10 @@
 import java.util.Date;
 import java.util.ArrayList;
 
-
 /**
  * Esta clase es la encargada de gestionar la compra de artículos.
+ *
+ * @author Walter Zárate
  */
 public class OrdenCompra {
 
@@ -127,7 +128,7 @@ public class OrdenCompra {
 		if(!estado.equals("pagada")){
 			float monto = 0;
 			for(int i = 0; i < pago.length; i++) {
-				monto += pago[i].GetMonto();
+				monto += pago[i].getMonto();
 			}
 			if(boletaFactura.equals("boleta") && monto >= this.calcMontoFaltante()){
 				if(pago.length == 1) {

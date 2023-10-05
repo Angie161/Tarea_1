@@ -5,11 +5,10 @@ import java.util.Date;
  * Clase que permite efectuar el pago de la Orden de compra a través de 3 subclases llamadas Efectivo, Tarjeta y Transferencia.
  *
  * @author Angie Ramírez
- * @version version 2, 28 de Septiembre del 2023
  */
 public class Pago {
 
-    /** float para almacenar la cantidad de dinero con el que se quiere pagar. */
+    /** Float para almacenar la cantidad de dinero con el que se quiere pagar. */
     private float monto;
 
     /** Date que guarda la fecha en la que se realiza el pago. */
@@ -38,7 +37,7 @@ public class Pago {
      * Devuelve el monto almacenado en la variable privada.
      * @return el monto almacenado.
      */
-    public float GetMonto(){
+    public float getMonto(){
         return monto;
     }
 }

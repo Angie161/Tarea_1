@@ -2,7 +2,6 @@
  * Subclase de Pago, la cual permite realizar la compra a través de una transferencia bancaria.
  *
  * @author Angie Ramírez
- * @version 2, 28 de Septiembre del 2023
  */
 public class Transferencia extends Pago {
     /** String para almacenar el nombre del banco al que se asocia la transacción*/

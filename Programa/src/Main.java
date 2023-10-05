@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * Clase principal con la que se realizarán pruebas de las otras clases del proyecto, para así evaluar su funcionalidad.
+ *
+ * @author Angie Ramírez
  */
 public class Main {
     /**
@@ -38,9 +40,9 @@ public class Main {
         System.out.println("[[[IVA: CLP "+ComidaSalada.calcIVA());
         System.out.println("[[[Precio total: CLP "+ComidaSalada.calcPrecio()+"\n");
 
-        ComidaSalada.AgregarArticulo(Completo);
-        ComidaSalada.AgregarArticulo(PapasXL);
-        ComidaSalada.AgregarArticulo(Jugo);
+        ComidaSalada.agregarArticulo(Completo);
+        ComidaSalada.agregarArticulo(PapasXL);
+        ComidaSalada.agregarArticulo(Jugo);
         System.out.println("Después de agregar los productos a consumir");
         System.out.println("[[[Detalle de la Comida Salada:");
         System.out.println("[[["+ComidaSalada.toString());
@@ -50,7 +52,7 @@ public class Main {
         System.out.println("[[[Precio total: CLP "+ComidaSalada.calcPrecio()+"\n");
 
         DetalleOrden ComidaDulce = new DetalleOrden();
-        ComidaDulce.AgregarArticulo(Pastel);
+        ComidaDulce.agregarArticulo(Pastel);
         System.out.println("[[[Detalle de la Comida Dulce:");
         System.out.println("[[["+ComidaDulce.toString());
         System.out.println("[[[Peso total: "+ComidaDulce.calcPeso()+"kg");
@@ -103,8 +105,8 @@ public class Main {
         //Detalle de Orden
         DetalleOrden ComidaPrincipal = new DetalleOrden();
 
-        ComidaPrincipal.AgregarArticulo(Sushi);
-        ComidaPrincipal.AgregarArticulo(Bebida);
+        ComidaPrincipal.agregarArticulo(Sushi);
+        ComidaPrincipal.agregarArticulo(Bebida);
         System.out.println("[[[Detalle del MENÚ SELECCIONADO:");
         System.out.println("[[["+ComidaPrincipal.toString());
         System.out.println("[[[Peso total: "+ComidaPrincipal.calcPeso()+"kg");
@@ -132,7 +134,7 @@ public class Main {
 
         DetalleOrden Comidaextra = new DetalleOrden();
 
-        Comidaextra.AgregarArticulo(PieDeLimon);
+        Comidaextra.agregarArticulo(PieDeLimon);
         System.out.println("\n[[[Detalle del MENÚ POSTRE:");
         System.out.println("[[["+Comidaextra.toString());
         System.out.println("[[[Peso total: "+Comidaextra.calcPeso()+"kg");
